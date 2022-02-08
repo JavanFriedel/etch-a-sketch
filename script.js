@@ -1,12 +1,12 @@
-let box = document.querySelector('#etch-box')
-let defaultDim = 16
+const box = document.querySelector('#etch-box')
+const defaultDim = 16
 
-function drawbox (x = defaultDim, y = x) {  
+function drawbox (x = defaultDim) {  
     let boxDimension = box.offsetWidth / x
     
 
     for (let i = 0; i < x; i++){
-        for (let j = 0; j < y; j++){
+        for (let j = 0; j < x; j++){
             let childBox = document.createElement('div')
             childBox.classList = "childBox" 
             childBox.style.width = boxDimension + "px"
@@ -34,19 +34,25 @@ function drawbox (x = defaultDim, y = x) {
 }
 
 
-function clearBox () {
+function clearBox (dim) {
     while(box.lastChild){
         box.removeChild(box.lastChild);
     }
 
-    drawbox() 
+    drawbox(dim) 
 }
 
 
-document.querySelector('#clearBtn').addEventListener('click', () => {
-    clearBox();
+document.querySelector('input[type=submit]').addEventListener('click', () => {
+    let resX = parseInt(document.querySelector('#resX').value)
+    
+    if (resX > 100){
+       alert('Number must be smaller than 100') 
+       return
+    } 
+    
+    clearBox(resX);
 })
 
-drawbox ()
 
-
+drawbox(16)

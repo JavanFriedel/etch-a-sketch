@@ -47,8 +47,14 @@ footer {
 .childBox {
     background-color: black;
     opacity: 0;
+    border: 1px solid black;
 }
 
 .btnRow {
     text-align: center;
+    margin: 20px;
+}
+
+input[type=text] {
+    max-width: 45px;
 }

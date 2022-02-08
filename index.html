@@ -13,14 +13,15 @@
         <h1>Etch-a-sketch</h1>
     </header>
 
-    <div class="btnRow"><button id="clearBtn">Clear!</button></div>
+    <div class="btnRow">
+        <label>Resolution:</label>
+        <input type="text" id="resX" name="X Resolution">            
+        <input type="submit" value="Reset">        
+    </div>
     <main>
         
         <div class="wrapper">
-            <div class="row">
-                <div class="etch-controls">
-                    controls here
-                </div>
+            <div class="row">                
                 <div id="etch-box" draggable="false">
                 </div>
             </div>
